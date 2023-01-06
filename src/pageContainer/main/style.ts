@@ -33,7 +33,7 @@ export const Sort = styled.div`
     width: 2.5rem;
     height: 2.5rem;
   }
-  > span {
+  span {
     margin-left: 1rem;
     font-weight: bold;
     font-size: 2rem;

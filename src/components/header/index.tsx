@@ -38,7 +38,7 @@ export function Header() {
                 </S.Profile>
               </>
             ) : (
-              <S.Login onClick={() => setIsOpen(true)}>로그린</S.Login>
+              <S.Login onClick={() => setIsOpen(true)}>로그인</S.Login>
             )}
           </S.Menu>
         </S.HeaderCenter>
