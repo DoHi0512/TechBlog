@@ -26,7 +26,9 @@ export default function Login() {
         </S.InputItem>
         <S.Submit>회원가입</S.Submit>
       </S.InputBox>
-      
+      <S.Info>
+        계정이 아직 없으신가요? <span>회원가입</span>
+      </S.Info>
     </S.LoginLayout>
   );
 }
