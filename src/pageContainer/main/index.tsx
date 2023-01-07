@@ -2,6 +2,7 @@ import "./style";
 import * as S from "./style";
 import { BsGraphUp } from "react-icons/bs";
 import { BiTime } from "react-icons/bi";
+import Post from "../../components/post";
 export default function MainPage() {
   return (
     <S.MainLayout>
@@ -16,84 +17,14 @@ export default function MainPage() {
         </S.Cate>
       </S.Sort>
       <S.PostLayout>
-        <S.Post>
-          <S.DescLayout>
-            <S.Desc>
-              <span>본문입니다</span>
-            </S.Desc>
-          </S.DescLayout>
-          <S.AuthorLayout>
-            <S.Author>
-              <span>2023/01/01</span>
-              <span>조회수{213}</span>
-            </S.Author>
-          </S.AuthorLayout>
-        </S.Post>
-        <S.Post>
-          <S.DescLayout>
-            <S.Desc>
-              <span>본문입니다</span>
-            </S.Desc>
-          </S.DescLayout>
-          <S.AuthorLayout>
-            <S.Author>
-              <span>2023/01/01</span>
-              <span>조회수{213}</span>
-            </S.Author>
-          </S.AuthorLayout>
-        </S.Post>
-        <S.Post>
-          <S.DescLayout>
-            <S.Desc>
-              <span>본문입니다</span>
-            </S.Desc>
-          </S.DescLayout>
-          <S.AuthorLayout>
-            <S.Author>
-              <span>2023/01/01</span>
-              <span>조회수{213}</span>
-            </S.Author>
-          </S.AuthorLayout>
-        </S.Post>
-        <S.Post>
-          <S.DescLayout>
-            <S.Desc>
-              <span>본문입니다</span>
-            </S.Desc>
-          </S.DescLayout>
-          <S.AuthorLayout>
-            <S.Author>
-              <span>2023/01/01</span>
-              <span>조회수{213}</span>
-            </S.Author>
-          </S.AuthorLayout>
-        </S.Post>
-        <S.Post>
-          <S.DescLayout>
-            <S.Desc>
-              <span>본문입니다</span>
-            </S.Desc>
-          </S.DescLayout>
-          <S.AuthorLayout>
-            <S.Author>
-              <span>2023/01/01</span>
-              <span>조회수{213}</span>
-            </S.Author>
-          </S.AuthorLayout>
-        </S.Post>
-        <S.Post>
-          <S.DescLayout>
-            <S.Desc>
-              <span>본문입니다</span>
-            </S.Desc>
-          </S.DescLayout>
-          <S.AuthorLayout>
-            <S.Author>
-              <span>2023/01/01</span>
-              <span>조회수{213}</span>
-            </S.Author>
-          </S.AuthorLayout>
-        </S.Post>
+        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
+        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
+        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
+        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
+        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
+        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
+        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
+        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
       </S.PostLayout>
     </S.MainLayout>
   );
