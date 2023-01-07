@@ -17,11 +17,11 @@ export default function Login() {
       </S.OAuthBox>
       <S.InputBox>
         <S.InputItem>
-          <span>Username</span>
+          <span>아이디</span>
           <input type="text" />
         </S.InputItem>
         <S.InputItem>
-          <span>Password</span>
+          <span>비밀번호</span>
           <input type="text" />
         </S.InputItem>
         <S.Submit>회원가입</S.Submit>
