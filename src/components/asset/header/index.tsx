@@ -4,6 +4,11 @@ import { AiOutlineCheckSquare, AiFillCaretDown } from "react-icons/ai";
 import { BsFillSunFill } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import ModalHandler from "../../modal/modalHandler";
+import { atom, RecoilRoot } from "recoil";
+export const popupState = atom({
+  key: "popup",
+  default: "login",
+});
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   let token;
@@ -11,7 +16,7 @@ export function Header() {
     token = localStorage.getItem("token");
   }, []);
   return (
-    <>
+    <RecoilRoot>
       <S.HeaderLayout>
         <S.HeaderCenter>
           {token ? (
@@ -45,8 +50,8 @@ export function Header() {
             )}
           </S.Menu>
         </S.HeaderCenter>
-        {isOpen ? <ModalHandler state="login" /> : null}
+        {isOpen ? <ModalHandler /> : null}
       </S.HeaderLayout>
-    </>
+    </RecoilRoot>
   );
 }

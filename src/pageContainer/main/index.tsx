@@ -81,6 +81,19 @@ export default function MainPage() {
             </S.Author>
           </S.AuthorLayout>
         </S.Post>
+        <S.Post>
+          <S.DescLayout>
+            <S.Desc>
+              <span>본문입니다</span>
+            </S.Desc>
+          </S.DescLayout>
+          <S.AuthorLayout>
+            <S.Author>
+              <span>2023/01/01</span>
+              <span>조회수{213}</span>
+            </S.Author>
+          </S.AuthorLayout>
+        </S.Post>
       </S.PostLayout>
     </S.MainLayout>
   );

@@ -20,7 +20,7 @@ export const PostLayout = styled.div`
 
   //데스크탑
   @media all and (min-width: 1024px) {
-    grid-template-columns: repeat(4, minmax(10rem, 1fr));
+    grid-template-columns: repeat(5, minmax(10rem, 1fr));
   }
 `;
 
