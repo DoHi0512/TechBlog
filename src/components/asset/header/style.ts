@@ -32,6 +32,14 @@ export const Login = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   height: 3rem;
+  &:hover {
+    background-color: black;
+    color: white;
+    transition: linear 0.15s;
+  }
+  &:not(:hover) {
+    transition: linear 0.15s;
+  }
 `;
 export const HeaderIconName = styled.div`
   height: 100%;
@@ -111,4 +119,3 @@ export const ProfileImage = styled.div`
     margin-left: 1rem;
   }
 `;
-

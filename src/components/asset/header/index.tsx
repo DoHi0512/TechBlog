@@ -3,6 +3,7 @@ import * as S from "./style";
 import { AiOutlineCheckSquare, AiFillCaretDown } from "react-icons/ai";
 import { BsFillSunFill } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
+import ModalHandler from "../../modal/modalHandler";
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   let token;
@@ -38,10 +39,13 @@ export function Header() {
                 </S.Profile>
               </>
             ) : (
-              <S.Login onClick={() => setIsOpen(true)}>로그인</S.Login>
+              <S.Login onClick={() => setIsOpen((prev) => !prev)}>
+                로그인
+              </S.Login>
             )}
           </S.Menu>
         </S.HeaderCenter>
+        {isOpen ? <ModalHandler state="login" /> : null}
       </S.HeaderLayout>
     </>
   );
