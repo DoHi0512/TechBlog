@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const CloseButton = styled.div`
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: right;
+  .icon {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    width: auto;
+    height: 100%;
+  }
+`;
 export const LoginLayout = styled.div`
   position: fixed;
   top: 50%;
@@ -8,7 +20,7 @@ export const LoginLayout = styled.div`
   display: flex;
   flex-direction: column;
   width: 55rem;
-  height: 55rem;
+  height: 60rem;
   position: absolute;
   background-color: white;
   border: 1px solid #dcdcdc;

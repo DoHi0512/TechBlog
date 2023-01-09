@@ -1,12 +1,15 @@
 import * as S from "./style";
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiOutlineClose } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { useRecoilState } from "recoil";
-import { popupState } from "../../asset/header";
+import { PopupState } from "../../asset/header";
 export default function Login() {
-  const [popup, setPopup] = useRecoilState(popupState);
+  const [popup, setPopup] = useRecoilState(PopupState);
   return (
     <S.LoginLayout>
+      <S.CloseButton >
+        <AiOutlineClose className="icon" />
+      </S.CloseButton>
       <S.Title>로그인</S.Title>
       <S.OAuthBox>
         <S.OAuth bgcolor="#272E33" color="white">

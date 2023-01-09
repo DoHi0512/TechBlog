@@ -5,10 +5,14 @@ import { BsFillSunFill } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import ModalHandler from "../../modal/modalHandler";
 import { atom, RecoilRoot } from "recoil";
-export const popupState = atom({
+export const PopupState = atom({
   key: "popup",
   default: "login",
 });
+export const ModalState = atom({
+  key : 'modal',
+  default : false
+})
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   let token;
