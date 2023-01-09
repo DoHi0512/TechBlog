@@ -12,6 +12,7 @@ export const CloseButton = styled.div`
   }
 `;
 export const LoginLayout = styled.div`
+  box-shadow: 3px 3px 1000px 1000px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 50%;
   left: 50%;
