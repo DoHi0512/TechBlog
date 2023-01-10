@@ -4,8 +4,9 @@ import { Header } from "../components/asset/header";
 import { atom, RecoilRoot } from "recoil";
 export const PopupState = atom({
   key: "popup",
-  default: "login",
+  default: "close",
 });
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>

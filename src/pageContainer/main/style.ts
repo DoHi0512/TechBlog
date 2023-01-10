@@ -11,7 +11,7 @@ export const MainLayout = styled.div`
 export const PostLayout = styled.div`
   width: 90%;
   display: grid;
-  gap: 1.5rem;
+  gap: 4rem;
 
   //태블릿,모바일
   @media all and (max-width: 1024px) {
@@ -20,7 +20,7 @@ export const PostLayout = styled.div`
 
   //데스크탑
   @media all and (min-width: 1024px) {
-    grid-template-columns: repeat(5, minmax(10rem, 1fr));
+    grid-template-columns: repeat(4, minmax(10rem, 1fr));
   }
 `;
 

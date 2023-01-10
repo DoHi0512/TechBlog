@@ -17,14 +17,55 @@ export default function MainPage() {
         </S.Cate>
       </S.Sort>
       <S.PostLayout>
-        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
-        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
-        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
-        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
-        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
-        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
-        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
-        <Post content={"본문입니다"} date={"2023/01/01"} views={231} />
+        <Post
+          content={"본문입니다"}
+          date={"2023/01/01"}
+          title={"제목입니다"}
+          image={"이미지입니다"}
+        />
+        <Post
+          content={"본문입니다"}
+          date={"2023/01/01"}
+          title={"제목입니다"}
+          image={"이미지입니다"}
+        />
+        <Post
+          content={"본문입니다"}
+          date={"2023/01/01"}
+          title={"제목입니다"}
+          image={"이미지입니다"}
+        />
+        <Post
+          content={"본문입니다"}
+          date={"2023/01/01"}
+          title={"제목입니다"}
+          image={"이미지입니다"}
+        />
+        <Post
+          content={"본문입니다"}
+          date={"2023/01/01"}
+          title={"제목입니다"}
+          image={"이미지입니다"}
+        />
+        <Post
+          content={"본문입니다"}
+          date={"2023/01/01"}
+          title={"제목입니다"}
+          image={"이미지입니다"}
+        />
+        <Post
+          content={"본문입니다"}
+          date={"2023/01/01"}
+          title={"제목입니다"}
+          image={"이미지입니다"}
+        />
+        <Post
+          content={"본문입니다"}
+          date={"2023/01/01"}
+          title={"제목입니다"}
+          image={"이미지입니다"}
+        />
+        
       </S.PostLayout>
     </S.MainLayout>
   );

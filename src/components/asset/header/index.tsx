@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import Modal from "react-modal";
 import { useRecoilState } from "recoil";
 import { PopupState } from "../../../pages/_app";
-import ModalHandler from "../../modal/userModal/modalHandler";
+import ModalHandler from "../../modal/userModal/ModalHandler";
 export function Header() {
   const [popup, setPopup] = useRecoilState(PopupState);
   let token;

@@ -1,42 +1,27 @@
 import styled from "styled-components";
 export const Post = styled.div`
+  border: 1px solid;
   border-radius: 1.5rem;
-  background: aqua;
   width: 100%;
-  height: 20rem;
+  height: 23rem;
   grid-column: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
-export const DescLayout = styled.div`
+export const Img = styled.img`
   width: 100%;
   height: 80%;
-  border-bottom: 1px solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
 `;
-
-export const Desc = styled.div`
-  font-size: 1.5rem;
-  height: 90%;
-  width: 90%;
-  > span {
-    white-space: normal;
-    width: 5rem;
-    height: auto;
-  }
-`;
-
-export const AuthorLayout = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
+export const Info = styled.div`
+  width: 95%;
   height: 20%;
-  align-items: center;
-`;
-export const Author = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 90%;
-  height: 90%;
-  font-size: 1.3rem;
+  span {
+    font-size: 1.3rem;
+  }
 `;
