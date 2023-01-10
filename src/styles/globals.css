@@ -135,7 +135,7 @@ body {
 @media all and (max-width: 1024px) {
   body,
   html {
-    font-size: 7.5px;
+    font-size: 6px;
   }
 }
 @media all and (max-width: 300px) {

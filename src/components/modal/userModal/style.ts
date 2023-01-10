@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const CloseButton = styled.div`
   width: 100%;
   height: 5rem;
@@ -9,6 +10,9 @@ export const CloseButton = styled.div`
     margin-right: 2rem;
     width: auto;
     height: 100%;
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
 export const LoginLayout = styled.div`

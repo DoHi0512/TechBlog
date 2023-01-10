@@ -5,6 +5,11 @@ export const HeaderLayout = styled.div`
   justify-content: center;
   width: 100%;
   height: 10vh;
+  .modal {
+    width: 55rem;
+    height: 60rem;
+    box-shadow: 3px 3px 1000px 1000px rgba(0, 0, 0, 0.5);
+  }
 `;
 export const HeaderCenter = styled.div`
   > *:hover {
