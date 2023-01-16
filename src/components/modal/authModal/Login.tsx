@@ -3,14 +3,20 @@ import { AiFillGithub, AiOutlineClose } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { useRecoilState } from "recoil";
 import { PopupState } from "../../../pages/_app";
-export default function Signup() {
+import { useState } from "react";
+import { AuthType } from "../../../type/auth";
+export default function Login() {
+  const [form, setForm] = useState<AuthType>({
+    username: "",
+    password1: "",
+  });
   const [popup, setPopup] = useRecoilState(PopupState);
   return (
     <S.LoginLayout>
       <S.CloseButton>
         <AiOutlineClose className="icon" onClick={() => setPopup("close")} />
       </S.CloseButton>
-      <S.Title>회원가입</S.Title>
+      <S.Title>로그인</S.Title>
       <S.OAuthBox>
         <S.OAuth bgcolor="#272E33" color="white">
           <AiFillGithub className="icon" />
@@ -24,17 +30,23 @@ export default function Signup() {
       <S.InputBox>
         <S.InputItem>
           <span>아이디</span>
-          <input type="text" />
+          <input
+            type="text"
+            onChange={(e) => setForm({ ...form, username: e.target.value })}
+          />
         </S.InputItem>
         <S.InputItem>
           <span>비밀번호</span>
-          <input type="text" />
+          <input
+            type="text"
+            onChange={(e) => setForm({ ...form, password1: e.target.value })}
+          />
         </S.InputItem>
-        <S.Submit>회원가입</S.Submit>
+        <S.Submit>로그인</S.Submit>
       </S.InputBox>
       <S.Info>
-        계정이 이미 있으신가요?{" "}
-        <span onClick={() => setPopup("login")}>로그인</span>
+        계정이 아직 없으신가요?{" "}
+        <span onClick={() => setPopup("signup")}>회원가입</span>
       </S.Info>
     </S.LoginLayout>
   );
