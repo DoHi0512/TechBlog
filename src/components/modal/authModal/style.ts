@@ -73,7 +73,7 @@ export const OAuth = styled.div<OAuthProps>`
   }
 `;
 export const InputBox = styled.div`
-  margin-top: 5rem;
+  margin-top: 2rem;
   width: 70%;
 `;
 export const InputItem = styled.div`
@@ -90,7 +90,7 @@ export const InputItem = styled.div`
     }
     padding-left: 1rem;
     margin-top: 0.7rem;
-    height: 5rem;
+    height: 4rem;
     border-radius: 1rem;
     border: 1px solid #dcdcdc;
     font-size: 1.5rem;
