@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
 export const Post = styled.div`
   border: 1px solid;
   border-radius: 1.5rem;
@@ -8,6 +9,14 @@ export const Post = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  &:hover {
+    transform: translateY(-1rem);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  &:not(:hover) {
+    transition: 0.3s;
+  }
 `;
 export const Img = styled.img`
   width: 100%;
