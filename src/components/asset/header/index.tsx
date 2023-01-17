@@ -22,7 +22,7 @@ export function Header() {
             <S.Username>{"username123"}</S.Username>
           </S.HeaderIconName>
         ) : (
-          <S.Title>BLOG</S.Title>
+          <S.Title>dohi.log</S.Title>
         )}
 
         <S.Menu>
