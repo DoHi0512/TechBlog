@@ -5,6 +5,7 @@ import { useRecoilState } from "recoil";
 import { PopupState } from "../../../pages/_app";
 import { useState } from "react";
 import { AuthType } from "../../../type/auth";
+import Auth from "../../../api/auth";
 export default function Signup() {
   const [popup, setPopup] = useRecoilState(PopupState);
   const [form, setForm] = useState<AuthType>({
@@ -50,7 +51,7 @@ export default function Signup() {
             onChange={(e) => setForm({ ...form, password2: e.target.value })}
           />
         </S.InputItem>
-        <S.Submit>회원가입</S.Submit>
+        <S.Submit onClick={() => Auth.signup()}>회원가입</S.Submit>
       </S.InputBox>
       <S.Info>
         계정이 이미 있으신가요?{" "}
