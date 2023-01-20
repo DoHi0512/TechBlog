@@ -7,12 +7,13 @@ import Modal from "react-modal";
 import { useRecoilState } from "recoil";
 import { PopupState } from "../../../pages/_app";
 import ModalHandler from "../../modal/authModal/ModalHandler";
+import Link from "next/link";
 export function Header() {
   const [popup, setPopup] = useRecoilState(PopupState);
-  let token;
-  useEffect(() => {
-    token = localStorage.getItem("token");
-  }, []);
+  let token = 1;
+  // useEffect(() => {
+  //   token = localStorage.getItem("token");
+  // }, []);
   return (
     <S.HeaderLayout>
       <S.HeaderCenter>
@@ -22,7 +23,9 @@ export function Header() {
             <S.Username>{"username123"}</S.Username>
           </S.HeaderIconName>
         ) : (
-          <S.Title>dohi.log</S.Title>
+          <Link href="/">
+            <S.Title>dohi.log</S.Title>
+          </Link>
         )}
 
         <S.Menu>
