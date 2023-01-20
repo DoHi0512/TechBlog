@@ -25,10 +25,11 @@ export const HeaderCenter = styled.div`
 export const Title = styled.div`
   font-size: 2.5rem;
   font-weight: bold;
+  color: black;
 `;
 
 export const Login = styled.div`
-  width: 11rem;
+  width: 11.5rem;
   border: 1px solid;
   border-radius: 2rem;
   display: flex;
@@ -36,7 +37,7 @@ export const Login = styled.div`
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  height: 3rem;
+  height: 3.5rem;
   &:hover {
     background-color: black;
     color: white;
@@ -52,12 +53,12 @@ export const HeaderIconName = styled.div`
   align-items: center;
   > .icon {
     width: auto;
-    height: 3rem;
+    height: 4rem;
   }
 `;
 export const Username = styled.div`
   margin-left: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
 `;
 
@@ -71,7 +72,7 @@ export const Menu = styled.div`
   }
   .icon {
     width: auto;
-    height: 3rem;
+    height: 4rem;
   }
 `;
 
@@ -99,15 +100,18 @@ export const Profile = styled.div`
       transition: linear 0.15s;
     }
   }
-
+  .icon {
+    color: gray;
+    width: 3rem;
+  }
   height: 100%;
   display: flex;
   align-items: center;
 `;
 
 export const ProfileImage = styled.div`
-  width: 4rem;
-  height: 4rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
