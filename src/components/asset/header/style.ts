@@ -102,7 +102,7 @@ export const Profile = styled.div`
   }
   .icon {
     color: gray;
-    width: 3rem;
+    width: 2.5rem;
   }
   height: 100%;
   display: flex;

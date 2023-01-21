@@ -6,7 +6,12 @@ export const Layout = styled.div`
   justify-content: center;
 `;
 export const Content = styled.div`
-  width: 50%;
+  @media all and (min-width: 1024px) {
+    width: 60%;
+  }
+  @media all and (max-width: 1024px) {
+    width: 85%;
+  }
   height: auto;
   background-color: aliceblue;
 `;
@@ -20,10 +25,10 @@ export const Info = styled.div`
   display: flex;
   flex-direction: row;
   font-size: 1.5rem;
+  justify-content: space-between;
+  width: 10rem;
 `;
 export const Author = styled.div`
   font-weight: bold;
 `;
-export const Date = styled.div`
-  margin-left: 2rem;
-`;
+export const Date = styled.div``;
