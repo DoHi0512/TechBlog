@@ -5,7 +5,7 @@ export default function PostEditor() {
     <Editor
       initialValue="# 여기에 글 작성"
       previewStyle="vertical"
-      height="800px"
+      height="100%"
       initialEditType="markdown"
       useCommandShortcut={true}
     />

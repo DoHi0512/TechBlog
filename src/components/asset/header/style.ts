@@ -79,7 +79,9 @@ export const Menu = styled.div`
 export const CreatePost = styled(Login)`
   &:hover {
     background-color: black;
-    color: white;
+    span {
+      color: white;
+    }
     transition: linear 0.15s;
   }
   &:not(:hover) {

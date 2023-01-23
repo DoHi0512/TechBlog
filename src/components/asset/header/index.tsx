@@ -34,7 +34,9 @@ export function Header() {
           {token ? (
             <>
               <S.CreatePost>
-                <span>새 글 작성</span>
+                <Link href="/create" >
+                  <span>새 글 작성</span>
+                </Link>
               </S.CreatePost>
               <S.Profile>
                 <S.ProfileImage>

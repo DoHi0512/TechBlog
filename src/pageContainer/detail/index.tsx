@@ -1,6 +1,8 @@
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { IdType } from "../../type/id";
 import * as S from "./style";
+
 export default function DetailPage({ id }: IdType) {
   return (
     <S.Layout>
