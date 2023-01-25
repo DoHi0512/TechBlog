@@ -57,7 +57,6 @@ export const HeaderIconName = styled.div`
   }
 `;
 export const Username = styled.div`
-  margin-left: 1rem;
   font-size: 3rem;
   font-weight: bold;
 `;

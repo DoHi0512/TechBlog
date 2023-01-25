@@ -8,7 +8,10 @@ import { useRecoilState } from "recoil";
 import { PopupState } from "../../../pages/_app";
 import ModalHandler from "../../modal/authModal/ModalHandler";
 import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 export function Header() {
+  const router = useRouter();
+  if (router.pathname === "/create") return null;
   const [popup, setPopup] = useRecoilState(PopupState);
   let token = 1;
   // useEffect(() => {
@@ -19,7 +22,6 @@ export function Header() {
       <S.HeaderCenter>
         {token ? (
           <S.HeaderIconName>
-            <AiOutlineCheckSquare className="icon" />
             <S.Username>{"username123"}</S.Username>
           </S.HeaderIconName>
         ) : (
@@ -34,7 +36,7 @@ export function Header() {
           {token ? (
             <>
               <S.CreatePost>
-                <Link href="/create" >
+                <Link href="/create">
                   <span>새 글 작성</span>
                 </Link>
               </S.CreatePost>
