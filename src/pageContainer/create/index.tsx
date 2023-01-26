@@ -16,13 +16,17 @@ export default function CreatePage() {
         <S.Info>내용</S.Info>
         <PostEditor />
         <S.Submit>
-          <S.Exit>
+          <S.Btn
+            bgcolor="white"
+            txtcolor="black"
+            hoverBgcolor="rgba(0,0,0,0.05)"
+          >
             <AiOutlineArrowLeft />
             <span>나가기</span>
-          </S.Exit>
-          <S.Finish>
+          </S.Btn>
+          <S.Btn bgcolor="#12b886" txtcolor="white" hoverBgcolor="#20c997">
             <span>출간하기</span>
-          </S.Finish>
+          </S.Btn>
         </S.Submit>
       </S.InputBox>
     </S.Layout>
