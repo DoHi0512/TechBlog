@@ -36,25 +36,28 @@ export const Submit = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items : center;
+  align-items: center;
   font-size: 2rem;
   font-weight: bold;
   margin-top: 4rem;
 `;
 
-export const Exit = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-export const Finish = styled.div`
+interface BtnProps {
+  bgcolor: string;
+  txtcolor: string;
+  hoverBgcolor: string;
+}
+export const Btn = styled.div<BtnProps>`
   height: 80%;
   width: 12rem;
   border-radius: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #12b886;
-  color: white;
+  background-color: ${(props) => props.bgcolor};
+  color: ${(props) => props.txtcolor};
+  &:hover {
+    background-color: ${(props) => props.hoverBgcolor};
+    transition: 0.15s;
+  }
 `;
