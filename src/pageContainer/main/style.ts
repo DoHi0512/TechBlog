@@ -7,20 +7,27 @@ export const MainLayout = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-
-export const PostLayout = styled.div`
-  width: 90%;
+interface SortProps {
+  width: string;
+  columns: number;
+}
+export const PostLayout = styled.div<SortProps>`
+  transition: 0.5s;
+  width: ${(props) => props.width};
   display: grid;
   gap: 4rem;
-
   //태블릿,모바일
   @media all and (max-width: 1024px) {
+    width: 90%;
     grid-template-columns: repeat(2, minmax(10rem, 1fr));
   }
 
   //데스크탑
   @media all and (min-width: 1024px) {
-    grid-template-columns: repeat(4, minmax(10rem, 1fr));
+    grid-template-columns: repeat(
+      ${(props) => props.columns},
+      minmax(10rem, 1fr)
+    );
   }
 `;
 
@@ -29,7 +36,7 @@ export const Sort = styled.div`
   display: flex;
   width: 90%;
   align-items: center;
-  .icon {
+  svg {
     width: 2.5rem;
     height: 2.5rem;
   }
@@ -38,11 +45,22 @@ export const Sort = styled.div`
     font-weight: bold;
     font-size: 2rem;
   }
+  .hidden {
+    @media all and (max-width: 1024px) {
+      display: none;
+    }
+  }
 `;
-
-export const Cate = styled.div`
+interface MenuProps {
+  degree?: string;
+}
+export const Cate = styled.div<MenuProps>`
   display: flex;
   align-items: center;
-  width: 15rem;
+  margin-right: 5rem;
   height: 100%;
+  svg {
+    transition: 0.2s;
+    transform: rotate(${(props) => props.degree});
+  }
 `;
