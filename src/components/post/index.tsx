@@ -1,28 +1,72 @@
+import { useEffect, useReducer, useState } from "react";
 import * as S from "./style";
 interface PostProps {
   title: string;
   content: string;
   date: string;
-  image?: string;
+  image: string;
+  degree: string;
 }
-export default function Post({ content, date, title, image }: PostProps) {
+interface ImgType {
+  width: string;
+  height: string;
+}
+interface PrevType {
+  display: string;
+  position: string;
+}
+export default function Post({
+  content,
+  date,
+  title,
+  image,
+  degree,
+}: PostProps) {
+  const [img, setImg] = useState<ImgType>({ width: "100%", height: "100%" });
+  const [prev, setPrev] = useState<PrevType>({
+    display: "none",
+    position: "absolute",
+  });
+  useEffect(() => {
+    if (degree === "세로") {
+      setImg({ ...img, width: "20%" });
+      setPrev({ display: "flex", position: "relative" });
+    } else {
+      setImg({ ...img, width: "100%" });
+      setPrev({ display: "none", position: "absolute" });
+    }
+  }, [degree]);
   return (
     <S.Post>
-      <S.Img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7X4inHhKB3FG2-kFxx2jE5GhW-Qh81DQotQ&usqp=CAU"></S.Img>
-      <S.Preview>
-        <S.Desc>
-          <span>
-            감격스로운 카카오 공채 합격이 엊그제 같은데 벌써 1년이 지나있다.
-            이제 신입 공채분들이 온보딩 교육을 받으면서 나의 신입 버프도 끝이
-            보인다. 그래서 나의 1년은 물경력이 된 것일까 🥹 너무나 맴찢할
-            주제이지만 이에 대해 파고들 수밖에 없었다.
-          </span>
-        </S.Desc>
-      </S.Preview>
-      <S.Info>
-        <span style={{ fontWeight: "bold" }}>{title}</span>
-        <span>{date}</span>
-      </S.Info>
+      <S.ContentBox>
+        <S.Img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7X4inHhKB3FG2-kFxx2jE5GhW-Qh81DQotQ&usqp=CAU"
+          width={img.width}
+          height={img.height}
+        ></S.Img>
+        <S.Preview position={prev.position} display={prev.display}>
+          <S.Desc>
+            <span>
+              useReducer에 대한 저의 열정과 이를 사용할 수 있는 다양한 경우를
+              설명했지만, 성급하게 추상화하지 않겠습니다. 보통의 경우 useState를
+              사용해도 괜찮습니다. 상태와 검증 조건들이 복잡해지기 시작하며
+              추가적인 노력이 들어가기 시작한다고 느껴지면 그때 점진적으로
+              useReducer를 고려해도 좋습니다. 그 후, 복잡한 객체들에
+              useReducer를 사용하기 시작하고 상태 변경에 따른 위험에 자주 직면할
+              때 Immer의 사용을 고려해 볼 수 있습니다. 혹은 상태 관리가 복잡해진
+              시점에 도달했다면 Mobx, Zustand, XState와 같은 훨씬 더 확장하기
+              쉬운 솔루션을 검토해보는 것이 좋습니다. 언제나 잊지 마세요.
+              단순하게 시작하고 필요한 경우에만 복잡성을 추가하세요.
+            </span>
+          </S.Desc>
+        </S.Preview>
+      </S.ContentBox>
+      <S.InfoBox>
+        <S.Info>
+          <span style={{ fontWeight: "bold" }}>{title}</span>
+          <span>{date}</span>
+        </S.Info>
+      </S.InfoBox>
     </S.Post>
   );
 }
