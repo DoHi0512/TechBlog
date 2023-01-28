@@ -2,11 +2,13 @@ import * as S from "./style";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useRouter } from "next/dist/client/router";
 const PostEditor = dynamic(() => import("../../components/PostEditor"), {
-  ssr: false,
+  // ssr: false,
 });
 export default function CreatePage() {
   const [content, setContent] = useState<string>("");
+  const router = useRouter();
   console.log(content);
   return (
     <S.Layout>
@@ -20,6 +22,7 @@ export default function CreatePage() {
             bgcolor="white"
             txtcolor="black"
             hoverBgcolor="rgba(0,0,0,0.05)"
+            onClick={() => router.back()}
           >
             <AiOutlineArrowLeft />
             <span>나가기</span>
