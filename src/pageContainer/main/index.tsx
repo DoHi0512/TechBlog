@@ -3,27 +3,33 @@ import * as S from "./style";
 import { BsGraphUp } from "react-icons/bs";
 import { BiTime } from "react-icons/bi";
 import { AiOutlineMenu } from "react-icons/ai";
-import Post from "../../components/post";
+import Post from "../../components/post/horizon";
 import { useReducer, useState } from "react";
+import VerticalPost from "../../components/post/vertical";
+import HorizonPost from "../../components/post/horizon";
 interface EventType {
   degree: string;
   width: string;
   columns: number;
   sort: string;
+  gap: string;
 }
+const test = [1, 2, 3, 4, 5, 6, 7, 8];
 export default function MainPage() {
   const [event, setEvent] = useReducer(
     (state: EventType) => {
       let newState: EventType;
       if (state.sort === "가로") {
         newState = {
-          width: "60%",
+          width: "50%",
           sort: "세로",
           columns: 1,
+          gap: "0",
           degree: "90deg",
         };
       } else {
         newState = {
+          gap: "4rem",
           width: "90%",
           sort: "가로",
           columns: 4,
@@ -32,8 +38,16 @@ export default function MainPage() {
       }
       return newState;
     },
-    { degree: "0", width: "90%", columns: 4, sort: "가로" }
+    { degree: "0", width: "90%", columns: 4, sort: "가로", gap: "4rem" }
   );
+  const Posts = test.map((data) => {
+    if (event.sort === "세로") {
+      return <VerticalPost />;
+    }
+    return (
+      <HorizonPost title="제목" content="내용" date="2023/01/01" image="123" />
+    );
+  });
   return (
     <S.MainLayout>
       <S.Sort>
@@ -54,49 +68,8 @@ export default function MainPage() {
           <span>{event.sort}</span>
         </S.Cate>
       </S.Sort>
-      <S.PostLayout width={event.width} columns={event.columns}>
-        <Post
-          content={"본문입니다"}
-          date={"2023/01/01"}
-          title={"제목입니다"}
-          image={"이미지입니다"}
-        />
-        <Post
-          content={"본문입니다"}
-          date={"2023/01/01"}
-          title={"제목입니다"}
-          image={"이미지입니다"}
-        />
-        <Post
-          content={"본문입니다"}
-          date={"2023/01/01"}
-          title={"제목입니다"}
-          image={"이미지입니다"}
-        />
-        <Post
-          content={"본문입니다"}
-          date={"2023/01/01"}
-          title={"제목입니다"}
-          image={"이미지입니다"}
-        />
-        <Post
-          content={"본문입니다"}
-          date={"2023/01/01"}
-          title={"제목입니다"}
-          image={"이미지입니다"}
-        />
-        <Post
-          content={"본문입니다"}
-          date={"2023/01/01"}
-          title={"제목입니다"}
-          image={"이미지입니다"}
-        />
-        <Post
-          content={"본문입니다"}
-          date={"2023/01/01"}
-          title={"제목입니다"}
-          image={"이미지입니다"}
-        />
+      <S.PostLayout width={event.width} columns={event.columns} gap={event.gap}>
+        {Posts}
       </S.PostLayout>
     </S.MainLayout>
   );

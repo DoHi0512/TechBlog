@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Layout = styled.div`
   width: 100%;
-  height: 80rem;
+  height: 70rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,9 +16,10 @@ export const Title = styled.input`
   &:focus {
     outline: none;
   }
+  padding-left : 1rem;
   width: 100%;
   height: 4rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   border-radius: 0.5rem;
   border: 1px solid gray;
@@ -58,6 +59,7 @@ export const Btn = styled.div<BtnProps>`
   color: ${(props) => props.txtcolor};
   &:hover {
     background-color: ${(props) => props.hoverBgcolor};
+    cursor: pointer;
     transition: 0.15s;
   }
 `;

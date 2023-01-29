@@ -10,16 +10,17 @@ export const MainLayout = styled.div`
 interface SortProps {
   width: string;
   columns: number;
+  gap: string;
 }
 export const PostLayout = styled.div<SortProps>`
-  transition: 0.5s;
+  transition: 0.35s;
   width: ${(props) => props.width};
   display: grid;
-  gap: 4rem;
+  gap: ${(props) => props.gap};
   //태블릿,모바일
   @media all and (max-width: 1024px) {
     width: 90%;
-    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+    grid-template-columns: repeat(1, minmax(10rem, 1fr));
   }
 
   //데스크탑
