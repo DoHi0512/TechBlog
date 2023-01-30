@@ -14,7 +14,7 @@ export default function CreatePage() {
     <S.Layout>
       <S.InputBox>
         <S.Info>제목</S.Info>
-        <S.Title placeholder="여기에 제목 입력"></S.Title>
+        <S.Title placeholder="제목 입력"></S.Title>
         <S.Info>태그</S.Info>
         <S.Title placeholder="(space 또는 ',' 로 구분)"></S.Title>
         <S.Info>내용</S.Info>
