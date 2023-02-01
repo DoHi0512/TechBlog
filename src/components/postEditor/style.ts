@@ -16,7 +16,7 @@ export const Title = styled.input`
   &:focus {
     outline: none;
   }
-  padding-left : 1rem;
+  padding-left: 1rem;
   width: 100%;
   height: 4rem;
   font-size: 1.8rem;
