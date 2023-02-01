@@ -1,4 +1,11 @@
 import styled from "styled-components";
+export const Info = styled.div`
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 export const Post = styled.div`
   width: 100%;
   height: 23rem;
@@ -7,8 +14,18 @@ export const Post = styled.div`
   border-bottom: 1px solid black;
   &:hover {
     cursor: pointer;
+    ${Info} {
+      transform: translateX(1rem);
+      transition: 0.5s;
+    }
+  }
+  &:not(:hover) {
+    ${Info} {
+      transition: 0.5s;
+    }
   }
 `;
+
 export const Content = styled.div`
   width: 100%;
   height: 80%;
@@ -19,13 +36,6 @@ export const Content = styled.div`
 export const Img = styled.img`
   width: 20%;
   height: 100%;
-`;
-export const Info = styled.div`
-  width: 75%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `;
 export const Title = styled.div`
   font-size: 2.5rem;
