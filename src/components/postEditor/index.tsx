@@ -3,13 +3,15 @@ import { Editor } from "@toast-ui/react-editor";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useRouter } from "next/dist/client/router";
-import { useRef } from "react";
+import { MutableRefObject, useRef } from "react";
 export default function PostEditor() {
   const editorRef = useRef(null);
   const GetContent = () => {
-    const editorIns = editorRef.current.getInstance();
-    const editorHtml = editorIns.getHtml();
-    console.log(editorMark);
+    if (editorRef.current) {
+      const editorIns = editorRef.current.getInstance();
+      const editorMark = editorIns.getMarkdown();
+      console.log(editorMark);
+    }
   };
   const router = useRouter();
   return (
