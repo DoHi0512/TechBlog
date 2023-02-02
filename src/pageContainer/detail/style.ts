@@ -7,13 +7,12 @@ export const Layout = styled.div`
 `;
 export const Content = styled.div`
   @media all and (min-width: 1024px) {
-    width: 60%;
+    width: 65%;
   }
   @media all and (max-width: 1024px) {
     width: 85%;
   }
   height: auto;
-  background-color: aliceblue;
 `;
 export const Title = styled.div`
   font-size: 5.5rem;
