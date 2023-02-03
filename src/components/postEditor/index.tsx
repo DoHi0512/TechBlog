@@ -6,6 +6,7 @@ import { useRouter } from "next/dist/client/router";
 import { MutableRefObject, useRef } from "react";
 export default function PostEditor() {
   const editorRef = useRef(null);
+  const router = useRouter();
   const GetContent = () => {
     if (editorRef.current) {
       const editorIns = editorRef.current.getInstance();
@@ -13,7 +14,6 @@ export default function PostEditor() {
       console.log(editorMark);
     }
   };
-  const router = useRouter();
   return (
     <S.Layout>
       <S.InputBox>
