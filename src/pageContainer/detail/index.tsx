@@ -37,6 +37,9 @@ double을 int로 바꾸는 과정에서 발생한 오류가 맞았다.
 const PostViewer = dynamic(() => import("../../components/PostViewer"), {
   ssr: false,
 });
+const Comments = dynamic(() => import("../../components/Comments"), {
+  ssr: false,
+});
 export default function DetailPage({ id }: IdType) {
   return (
     <S.Layout>
@@ -46,6 +49,7 @@ export default function DetailPage({ id }: IdType) {
           <S.Author>DoHi</S.Author>·<S.Date>5일 전</S.Date>
         </S.Info>
         <PostViewer content={content} />
+        <Comments />
       </S.Content>
     </S.Layout>
   );
