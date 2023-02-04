@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-
+  basePath: "/DoHi0512.github.io/Blog_FE",
   async redirects() {
     return [
       {
