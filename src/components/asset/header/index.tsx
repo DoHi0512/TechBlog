@@ -10,9 +10,9 @@ import ModalHandler from "../../modal/authModal/ModalHandler";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
 export function Header() {
+  const [popup, setPopup] = useRecoilState(PopupState);
   const router = useRouter();
   if (router.pathname === "/create") return null;
-  const [popup, setPopup] = useRecoilState(PopupState);
   let token = 1;
   // useEffect(() => {
   //   token = localStorage.getItem("token");
