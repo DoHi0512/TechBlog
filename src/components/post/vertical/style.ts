@@ -13,7 +13,6 @@ export const Post = styled.div`
   align-items: center;
   border-bottom: 1px solid black;
   &:hover {
-    cursor: pointer;
     ${Info} {
       transform: translateX(1rem);
       transition: 0.5s;

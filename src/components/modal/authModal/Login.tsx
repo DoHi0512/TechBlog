@@ -6,11 +6,12 @@ import { PopupState } from "../../../pages/_app";
 import { useState } from "react";
 import { AuthType } from "../../../type/auth";
 export default function Login() {
+  const [popup, setPopup] = useRecoilState(PopupState);
   const [form, setForm] = useState<AuthType>({
     username: "",
     password1: "",
   });
-  const [popup, setPopup] = useRecoilState(PopupState);
+  
   return (
     <S.LoginLayout>
       <S.CloseButton>

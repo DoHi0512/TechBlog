@@ -7,7 +7,7 @@ export const Layout = styled.div`
 `;
 export const Content = styled.div`
   @media all and (min-width: 1024px) {
-    width: 65%;
+    width: 60%;
   }
   @media all and (max-width: 1024px) {
     width: 85%;

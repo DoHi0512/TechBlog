@@ -7,13 +7,14 @@ import { MutableRefObject, useRef } from "react";
 export default function PostEditor() {
   const editorRef = useRef(null);
   const router = useRouter();
-  const GetContent = () => {
-    if (editorRef.current) {
-      const editorIns = editorRef.current.getInstance();
-      const editorMark = editorIns.getMarkdown();
-      console.log(editorMark);
-    }
-  };
+  console.log(editorRef)
+  // const GetContent = () => {
+  //   if (editorRef.current) {
+  //     const editorIns = editorRef.current.getInstance();
+  //     const editorMark = editorIns.getMarkdown();
+  //     console.log(editorMark);
+  //   }
+  // };
   return (
     <S.Layout>
       <S.InputBox>
@@ -41,7 +42,7 @@ export default function PostEditor() {
             <span>나가기</span>
           </S.Btn>
           <S.Btn bgcolor="#12b886" txtcolor="white" hoverBgcolor="#20c997">
-            <span onClick={() => GetContent()}>출간하기</span>
+            <span >출간하기</span>
           </S.Btn>
         </S.Submit>
       </S.InputBox>

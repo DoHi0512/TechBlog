@@ -51,7 +51,7 @@ export default function Signup() {
             onChange={(e) => setForm({ ...form, password2: e.target.value })}
           />
         </S.InputItem>
-        <S.Submit onClick={() => Auth.signup()}>회원가입</S.Submit>
+        <S.Submit>회원가입</S.Submit>
       </S.InputBox>
       <S.Info>
         계정이 이미 있으신가요?{" "}

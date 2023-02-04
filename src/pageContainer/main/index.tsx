@@ -7,6 +7,7 @@ import Post from "../../components/post/horizon";
 import { useReducer, useState } from "react";
 import VerticalPost from "../../components/post/vertical";
 import HorizonPost from "../../components/post/horizon";
+import Link from "next/link";
 interface EventType {
   degree: string;
   width: string;
@@ -40,12 +41,23 @@ export default function MainPage() {
     },
     { degree: "0", width: "90%", columns: 4, sort: "가로", gap: "4rem" }
   );
-  const Posts = test.map((data) => {
+  const Posts = test.map((data, idx) => {
     if (event.sort === "세로") {
-      return <VerticalPost />;
+      return (
+        <Link href={"/detail/2"} key={idx}>
+          <VerticalPost />
+        </Link>
+      );
     }
     return (
-      <HorizonPost title="제목" content="내용" date="2023/01/01" image="123" />
+      <Link href={"/detail/2"} key={idx}>
+        <HorizonPost
+          title="제목"
+          content="내용"
+          date="2023/01/01"
+          image="123"
+        />
+      </Link>
     );
   });
   return (
