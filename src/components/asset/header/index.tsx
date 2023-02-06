@@ -13,7 +13,7 @@ export function Header() {
   const [popup, setPopup] = useRecoilState(PopupState);
   const router = useRouter();
   if (router.pathname === "/create") return null;
-  let token = 1;
+  let token = null;
   // useEffect(() => {
   //   token = localStorage.getItem("token");
   // }, []);
