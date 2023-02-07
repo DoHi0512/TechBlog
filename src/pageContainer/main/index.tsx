@@ -74,7 +74,7 @@ export default function MainPage() {
         <S.Cate
           onClick={() => setEvent()}
           degree={event.degree}
-          className="hidden"
+          className="hidde"
         >
           <AiOutlineMenu />
           <span>{event.sort}</span>

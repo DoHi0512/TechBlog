@@ -20,7 +20,7 @@ export const PostLayout = styled.div<SortProps>`
   //태블릿,모바일
   @media all and (max-width: 1024px) {
     width: 90%;
-    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+    grid-template-columns: repeat(1, minmax(10rem, 1fr));
   }
 
   //데스크탑
