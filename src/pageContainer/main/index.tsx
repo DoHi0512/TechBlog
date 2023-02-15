@@ -4,10 +4,15 @@ import { BsGraphUp } from "react-icons/bs";
 import { BiTime } from "react-icons/bi";
 import { AiOutlineMenu } from "react-icons/ai";
 import Post from "../../components/post/horizon";
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import VerticalPost from "../../components/post/vertical";
 import HorizonPost from "../../components/post/horizon";
 import Link from "next/link";
+import { PostType } from "../../type/post";
+import PostApi from "../../api/post";
+import { GetServerSideProps } from "next";
+import axios from "axios";
+import { AxiosType } from "../../type/axios";
 interface EventType {
   degree: string;
   width: string;
@@ -15,8 +20,10 @@ interface EventType {
   sort: string;
   gap: string;
 }
-const test = [1, 2, 3, 4, 5, 6, 7, 8];
-export default function MainPage() {
+
+export const MainPage = ({ data }: AxiosType) => {
+  console.log(data);
+  const [post, setPost] = useState<PostType[]>([]);
   const [event, setEvent] = useReducer(
     (state: EventType) => {
       let newState: EventType;
@@ -41,16 +48,16 @@ export default function MainPage() {
     },
     { degree: "0", width: "90%", columns: 4, sort: "가로", gap: "4rem" }
   );
-  const Posts = test.map((data, idx) => {
+  const Posts = data.map((data, idx) => {
     if (event.sort === "세로") {
       return (
-        <Link href={"/detail/2"} key={idx}>
+        <Link href={`/detail/${data.postId}`} key={idx}>
           <VerticalPost />
         </Link>
       );
     }
     return (
-      <Link href={"/detail/2"} key={idx}>
+      <Link href={`/detail/${data.postId}`} key={idx}>
         <HorizonPost
           title="제목"
           content="내용"
@@ -85,4 +92,4 @@ export default function MainPage() {
       </S.PostLayout>
     </S.MainLayout>
   );
-}
+};
