@@ -13,43 +13,26 @@ export function Header() {
   const [popup, setPopup] = useRecoilState(PopupState);
   const router = useRouter();
   if (router.pathname === "/create") return null;
-  let token = null;
+  let token = 1;
   // useEffect(() => {
   //   token = localStorage.getItem("token");
   // }, []);
   return (
     <S.HeaderLayout>
       <S.HeaderCenter>
-        {token ? (
-          <S.HeaderIconName>
-            <S.Username>{"username123"}</S.Username>
-          </S.HeaderIconName>
-        ) : (
-          <Link href="/">
-            <S.Title>dohi.log</S.Title>
-          </Link>
-        )}
+        <Link href="/">
+          <S.Title>dohi.log</S.Title>
+        </Link>
 
         <S.Menu>
           <BsFillSunFill className="icon" />
           <CiSearch className="icon" />
-          {token ? (
-            <>
-              <S.CreatePost>
-                <Link href="/create">
-                  <span>새 글 작성</span>
-                </Link>
-              </S.CreatePost>
-              <S.Profile>
-                <S.ProfileImage>
-                  <img src="https://velog.velcdn.com/images/dohi/profile/ab7884a4-0310-403b-bdcc-4db11d6c231f/image.webp"></img>
-                </S.ProfileImage>
-                <AiFillCaretDown className="icon" />
-              </S.Profile>
-            </>
-          ) : (
-            <S.Login onClick={() => setPopup("login")}>로그인</S.Login>
-          )}
+
+          <S.CreatePost>
+            <Link href="/create">
+              <span>새 글 작성</span>
+            </Link>
+          </S.CreatePost>
         </S.Menu>
       </S.HeaderCenter>
       <Modal
