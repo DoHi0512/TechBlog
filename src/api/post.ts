@@ -25,6 +25,17 @@ class Post {
       return err;
     }
   }
+
+  getById(id: string | string[] | undefined) : any {
+    try {
+      return RequestApi({
+        method: "GET",
+        url: `http://localhost:8080/post/one/${id}`,
+      });
+    } catch (err) {
+      return err;
+    }
+  }
 }
 
 export default new Post();
