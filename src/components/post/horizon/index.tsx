@@ -1,17 +1,8 @@
 import { useEffect, useReducer, useState } from "react";
+import { PostType } from "../../../type/post";
 import * as S from "./style";
-interface PostProps {
-  title: string;
-  content: string;
-  date: string;
-  image: string;
-}
-export default function HorizonPost({
-  content,
-  date,
-  title,
-  image,
-}: PostProps) {
+
+export default function HorizonPost({ content, date, title, image }: PostType) {
   return (
     <S.Post>
       <S.Img src={image}></S.Img>
@@ -21,7 +12,7 @@ export default function HorizonPost({
         </S.Desc>
       </S.Preview>
       <S.Info>
-        <span style={{ fontWeight: "bold" }}>{title}</span>
+        <span style={{}}>{title}</span>
         <span>{date}</span>
       </S.Info>
     </S.Post>
