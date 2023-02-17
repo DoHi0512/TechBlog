@@ -25,7 +25,7 @@ export const Info = styled.div`
   flex-direction: row;
   font-size: 1.5rem;
   justify-content: space-between;
-  width: 10rem;
+  width: 12rem;
 `;
 export const Author = styled.div`
   font-weight: bold;

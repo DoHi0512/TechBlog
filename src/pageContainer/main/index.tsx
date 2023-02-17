@@ -52,17 +52,22 @@ export const MainPage = ({ data }: AxiosType) => {
     if (event.sort === "세로") {
       return (
         <Link href={`/detail/${data.postId}`} key={idx}>
-          <VerticalPost />
+          <VerticalPost
+            title={data.title}
+            content={data.content}
+            date={data.date}
+            image={data.image}
+          />
         </Link>
       );
     }
     return (
       <Link href={`/detail/${data.postId}`} key={idx}>
         <HorizonPost
-          title="제목"
-          content="내용"
-          date="2023/01/01"
-          image="123"
+          title={data.title}
+          content={data.content}
+          date={data.date}
+          image={data.image}
         />
       </Link>
     );

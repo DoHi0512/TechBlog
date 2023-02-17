@@ -6,11 +6,11 @@ export const PopupState = atom({
   key: "pop",
   default: "close",
 });
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, ...other }: AppProps) {
   return (
     <RecoilRoot>
       <Header />
-      <Component {...pageProps} />
+      <Component {...pageProps} {...other} />
     </RecoilRoot>
   );
 }
