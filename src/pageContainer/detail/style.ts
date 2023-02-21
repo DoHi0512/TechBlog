@@ -25,9 +25,11 @@ export const Info = styled.div`
   flex-direction: row;
   font-size: 1.5rem;
   justify-content: space-between;
-  width: 12rem;
+  width: 100%;
 `;
-export const Author = styled.div`
-  font-weight: bold;
+export const Date = styled.div`
 `;
-export const Date = styled.div``;
+
+export const Modify = styled.div`
+  
+`
