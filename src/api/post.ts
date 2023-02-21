@@ -26,11 +26,23 @@ class Post {
     }
   }
 
-  getById(id: string | string[] | undefined) : any {
+  getById(id: string | string[] | undefined): any {
     try {
       return RequestApi({
         method: "GET",
         url: `http://localhost:8080/post/one/${id}`,
+      });
+    } catch (err) {
+      return err;
+    }
+  }
+
+  modify(data: PostType) {
+    try {
+      return RequestApi({
+        method: "PUT",
+        url: `http://localhost:8080/post/modify/`,
+        data: data,
       });
     } catch (err) {
       return err;
