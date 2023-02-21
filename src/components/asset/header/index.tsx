@@ -12,11 +12,8 @@ import { useRouter } from "next/dist/client/router";
 export function Header() {
   const [popup, setPopup] = useRecoilState(PopupState);
   const router = useRouter();
-  if (router.pathname === "/create") return null;
-  let token = 1;
-  // useEffect(() => {
-  //   token = localStorage.getItem("token");
-  // }, []);
+  if (router.pathname === "/create" || router.pathname === "/modify/[id]")
+    return null;
   return (
     <S.HeaderLayout>
       <S.HeaderCenter>
