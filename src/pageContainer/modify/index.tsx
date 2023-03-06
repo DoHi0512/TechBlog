@@ -4,6 +4,10 @@ const PostEditor = dynamic(() => import("../../components/postEditor/index"), {
   ssr: false,
 });
 
-export const ModifyPage = (data: PostType) => {
-  return <PostEditor {...data} />;
+// export const ModifyPage = (data: PostType) => {
+//   return <PostEditor {...data} />;
+// };
+
+export const ModifyPage = () => {
+  return <></>;
 };
