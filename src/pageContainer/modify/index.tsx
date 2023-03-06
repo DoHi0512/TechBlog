@@ -9,5 +9,5 @@ const PostEditor = dynamic(() => import("../../components/postEditor/index"), {
 // };
 
 export const ModifyPage = () => {
-  return <></>;
+  return <div>HI</div>;
 };
