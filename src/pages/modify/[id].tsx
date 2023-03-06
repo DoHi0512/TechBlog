@@ -4,7 +4,7 @@ import PostApi from "../../api/post";
 import { AxiosType } from "../../type/axios";
 import { PostType } from "../../type/post";
 export const Modify = () => {
-  return <ModifyPage />;
+  return <div>HI</div>;
 };
 
 // export const getServerSideProps: GetServerSideProps = async (ctx) => {
