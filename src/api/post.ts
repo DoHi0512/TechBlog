@@ -1,39 +1,50 @@
+import {
+  addDoc,
+  collection,
+  doc,
+  DocumentData,
+  getDocs,
+  query,
+  QueryDocumentSnapshot,
+  QuerySnapshot,
+  where,
+} from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 import { AxiosType } from "../type/axios";
 import { PostType } from "../type/post";
 import RequestApi from "../utils/requestApi";
 class Post {
-  create(data: PostType) {
-    console.log(data);
+  async create(data: PostType) {
     try {
-      return RequestApi({
-        method: "POST",
-        url: "http://localhost:8080/post/create",
-        data: data,
+      const docRef = await addDoc(collection(db, "post"), {
+        ...data,
       });
     } catch (err) {
-      return err;
+      return null;
     }
   }
 
-  getAll(): any {
+  async getAll() {
     try {
-      return RequestApi({
-        method: "GET",
-        url: "http://localhost:8080/post/all",
-      });
+      const querySnapShot = await getDocs(collection(db, "post"));
+      // const post: QueryDocumentSnapshot<DocumentData>[] = [];
+      // querySnapShot.forEach((data) => {
+      //   post.push(data);
+      // });
+      // return post;
+      return querySnapShot;
     } catch (err) {
-      return err;
+      return null;
     }
   }
 
-  getById(id: string | string[] | undefined): any {
+  async getById(title: string) {
     try {
-      return RequestApi({
-        method: "GET",
-        url: `http://localhost:8080/post/one/${id}`,
-      });
+      const q = query(collection(db, "post"), where("title", "==", title));
+      const docRef = await getDocs(q);
+      return docRef;
     } catch (err) {
-      return err;
+      return null;
     }
   }
 
