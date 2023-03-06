@@ -23,7 +23,6 @@ export default function PostEditor({ content, title, tag }: ModifyType) {
     title: title ? title : "",
     tag: tag ? tag : [],
     image: "",
-    postId: router.query.id,
   });
   const GetContent = useCallback(() => {
     if (editorRef.current) {
