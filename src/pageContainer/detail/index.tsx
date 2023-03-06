@@ -14,6 +14,7 @@ export default function DetailPage({ content, title, date, image }: PostType) {
   const router = useRouter();
   const { id } = router.query;
   console.log(id);
+  console.log(content, title, image);
   return (
     <S.Layout>
       <S.Content>

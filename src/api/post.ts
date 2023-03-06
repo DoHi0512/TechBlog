@@ -15,11 +15,14 @@ import { PostType } from "../type/post";
 import RequestApi from "../utils/requestApi";
 class Post {
   async create(data: PostType) {
+    console.log("create : ", data);
     try {
       const docRef = await addDoc(collection(db, "post"), {
         ...data,
       });
+      console.log(docRef);
     } catch (err) {
+      console.log(err);
       return null;
     }
   }
@@ -27,18 +30,13 @@ class Post {
   async getAll() {
     try {
       const querySnapShot = await getDocs(collection(db, "post"));
-      // const post: QueryDocumentSnapshot<DocumentData>[] = [];
-      // querySnapShot.forEach((data) => {
-      //   post.push(data);
-      // });
-      // return post;
       return querySnapShot;
     } catch (err) {
       return null;
     }
   }
 
-  async getById(title: string) {
+  async getByTitle(title: string | undefined | string[]) {
     try {
       const q = query(collection(db, "post"), where("title", "==", title));
       const docRef = await getDocs(q);

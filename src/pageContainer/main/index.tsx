@@ -13,6 +13,7 @@ import PostApi from "../../api/post";
 import { GetServerSideProps } from "next";
 import axios from "axios";
 import { AxiosType } from "../../type/axios";
+import { GithubLogin } from "../../firebase/auth";
 interface EventType {
   degree: string;
   width: string;
@@ -46,12 +47,12 @@ export const MainPage = ({ data }: AxiosType) => {
       }
       return newState;
     },
-    { degree: "0", width: "90%", columns: 4, sort: "가로", gap: "4rem" }
+    { degree: "90deg", width: "50%", columns: 1, sort: "세로", gap: "0" }
   );
   const Posts = data.map((data, idx) => {
     if (event.sort === "세로") {
       return (
-        <Link href={`/detail/${data.postId}`} key={idx}>
+        <Link href={`/detail/${data.title}`} key={idx}>
           <VerticalPost
             title={data.title}
             content={data.content}
@@ -62,7 +63,7 @@ export const MainPage = ({ data }: AxiosType) => {
       );
     }
     return (
-      <Link href={`/detail/${data.postId}`} key={idx}>
+      <Link href={`/detail/${data.title}`} key={idx}>
         <HorizonPost
           title={data.title}
           content={data.content}
