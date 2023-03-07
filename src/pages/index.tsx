@@ -11,7 +11,6 @@ import {
 import { FirebaseType } from "../type/firebase";
 
 export default function Home(data: any) {
-  console.log(data.data);
   return <MainPage {...data} />;
 }
 

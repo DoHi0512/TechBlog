@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Themeprovider } from "../../../styles/theme";
 export const Preview = styled.div`
   width: 100%;
   height: 80%;
@@ -12,7 +13,7 @@ export const Img = styled.img`
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 `;
-export const Post = styled.div`
+export const Post = styled(Themeprovider)`
   position: relative;
   border: 1px solid;
   border-radius: 1rem;

@@ -5,40 +5,50 @@ import { BsFillSunFill } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import Modal from "react-modal";
 import { useRecoilState } from "recoil";
-import { PopupState } from "../../../pages/_app";
-import ModalHandler from "../../modal/authModal/ModalHandler";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
+import AuthAPI from "../../../api/auth";
+import { darkTheme, lightTheme, ThemeState } from "../../../pages/_app";
 export function Header() {
-  const [popup, setPopup] = useRecoilState(PopupState);
+  const [theme, setTheme] = useRecoilState(ThemeState);
   const router = useRouter();
   if (router.pathname === "/create" || router.pathname === "/modify/[id]")
     return null;
   return (
-    <S.HeaderLayout>
+    <S.HeaderLayout background={theme.background} text={theme.text}>
       <S.HeaderCenter>
         <Link href="/">
-          <S.Title>dohi.log</S.Title>
+          <S.Title text={theme.text}>dohi.log</S.Title>
         </Link>
-
         <S.Menu>
-          <BsFillSunFill className="icon" />
+          <BsFillSunFill
+            className="icon"
+            onClick={() =>
+              theme == lightTheme ? setTheme(darkTheme) : setTheme(lightTheme)
+            }
+          />
           <CiSearch className="icon" />
-
-          <S.CreatePost>
-            <Link href="/create">
+          <Link href="/create">
+            <S.Btn background={theme.background} text={theme.text}>
               <span>새 글 작성</span>
-            </Link>
-          </S.CreatePost>
+            </S.Btn>
+          </Link>
+          <S.Btn
+            background={theme.background}
+            text={theme.text}
+            onClick={() => AuthAPI.signup()}
+          >
+            <span>로그인</span>
+          </S.Btn>
+          <S.Btn
+            background={theme.background}
+            text={theme.text}
+            onClick={() => AuthAPI.siguout()}
+          >
+            <span>로그아웃</span>
+          </S.Btn>
         </S.Menu>
       </S.HeaderCenter>
-      <Modal
-        isOpen={popup !== "close"}
-        onRequestClose={() => setPopup("close")}
-        className="modal"
-      >
-        <ModalHandler />
-      </Modal>
     </S.HeaderLayout>
   );
 }

@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { ThemeState } from "../../pages/_app";
 import { IdType } from "../../type/id";
 import { PostType } from "../../type/post";
 import * as S from "./style";
@@ -12,16 +14,15 @@ const Comments = dynamic(() => import("../../components/Comments"), {
 });
 export default function DetailPage({ content, title, date, image }: PostType) {
   const router = useRouter();
-  const { id } = router.query;
-  console.log(id);
-  console.log(content, title, image);
+  const [theme, setTheme] = useRecoilState(ThemeState);
+  console.log(theme);
   return (
-    <S.Layout>
+    <S.Layout text={theme.text} background={theme.background}>
       <S.Content>
         <S.Title>{title}</S.Title>
         <S.Info>
           <S.Date>{date}</S.Date>
-          <Link href={{ pathname: "/modify/[id]", query: { id: id } }}>
+          <Link href="/detail/1">
             <S.Modify>수정</S.Modify>
           </Link>
         </S.Info>

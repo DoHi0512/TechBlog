@@ -8,6 +8,8 @@ import PostApi from "../../api/post";
 import { PostType } from "../../type/post";
 import Link from "next/dist/client/link";
 import { Editor as EditorType, EditorProps } from "@toast-ui/react-editor";
+import { useRecoilState } from "recoil";
+import { ThemeState } from "../../pages/_app";
 interface ModifyType {
   content?: string;
   title?: string;
@@ -18,6 +20,7 @@ export default function PostEditor({ content, title, tag }: ModifyType) {
   const editorRef = useRef<EditorType>(null);
   const router = useRouter();
   const task = router.asPath.substring(1, 7) === "modify" ? true : false;
+  const [theme, setTheme] = useRecoilState(ThemeState);
   const [post, setPost] = useState<PostType>({
     content: content ? content : "",
     title: title ? title : "",

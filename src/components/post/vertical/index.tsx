@@ -1,3 +1,5 @@
+import { useRecoilState } from "recoil";
+import { ThemeState } from "../../../pages/_app";
 import { PostType } from "../../../type/post";
 import * as S from "./style";
 export default function VerticalPost({
@@ -6,8 +8,9 @@ export default function VerticalPost({
   title,
   date,
 }: PostType) {
+  const [theme, setTheme] = useRecoilState(ThemeState);
   return (
-    <S.Post>
+    <S.Post text={theme.text} background={theme.background}>
       <S.Content>
         <S.Img src={image}></S.Img>
         <S.Info>

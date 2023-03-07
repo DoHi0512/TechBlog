@@ -1,5 +1,6 @@
 import styled from "styled-components";
-export const Layout = styled.div`
+import { Themeprovider } from "../../styles/theme";
+export const Layout = styled(Themeprovider)`
   width: 100%;
   height: 100%;
   display: flex;
@@ -27,9 +28,6 @@ export const Info = styled.div`
   justify-content: space-between;
   width: 100%;
 `;
-export const Date = styled.div`
-`;
+export const Date = styled.div``;
 
-export const Modify = styled.div`
-  
-`
+export const Modify = styled.div``;

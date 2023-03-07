@@ -14,6 +14,8 @@ import { GetServerSideProps } from "next";
 import axios from "axios";
 import { AxiosType } from "../../type/axios";
 import { GithubLogin } from "../../firebase/auth";
+import { useRecoilState } from "recoil";
+import { ThemeState } from "../../pages/_app";
 interface EventType {
   degree: string;
   width: string;
@@ -23,8 +25,7 @@ interface EventType {
 }
 
 export const MainPage = ({ data }: AxiosType) => {
-  console.log(data);
-  const [post, setPost] = useState<PostType[]>([]);
+  const [theme, setTheme] = useRecoilState(ThemeState);
   const [event, setEvent] = useReducer(
     (state: EventType) => {
       let newState: EventType;
@@ -74,7 +75,7 @@ export const MainPage = ({ data }: AxiosType) => {
     );
   });
   return (
-    <S.MainLayout>
+    <S.MainLayout background={theme.background} text={theme.text}>
       <S.Sort>
         <S.Cate>
           <BsGraphUp />

@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { Themeprovider } from "../../../styles/theme";
 
-export const HeaderLayout = styled.div`
+export const HeaderLayout = styled(Themeprovider)`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 10vh;
+  height: 8rem;
   .modal {
     width: 55rem;
     height: 60rem;
@@ -22,15 +23,17 @@ export const HeaderCenter = styled.div`
   justify-content: space-between;
 `;
 
-export const Title = styled.div`
+export const Title = styled(Themeprovider)`
+  transition: 0.15s;
   font-size: 2.5rem;
   font-weight: bold;
-  color: black;
 `;
 
-export const Login = styled.div`
+export const Btn = styled(Themeprovider)`
+  transition: 0.15s;
   width: 11.5rem;
-  border: 1px solid;
+  border: 1px solid ${(props) => props.text};
+  color: ${(props) => props.text};
   border-radius: 2rem;
   display: flex;
   justify-content: center;
@@ -39,26 +42,13 @@ export const Login = styled.div`
   font-weight: bold;
   height: 3.5rem;
   &:hover {
-    background-color: black;
-    color: white;
+    background-color: ${(props) => props.text};
+    color: ${(props) => props.background};
     transition: linear 0.15s;
   }
   &:not(:hover) {
     transition: linear 0.15s;
   }
-`;
-export const HeaderIconName = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  > .icon {
-    width: auto;
-    height: 4rem;
-  }
-`;
-export const Username = styled.div`
-  font-size: 3rem;
-  font-weight: bold;
 `;
 
 export const Menu = styled.div`
@@ -72,60 +62,5 @@ export const Menu = styled.div`
   .icon {
     width: auto;
     height: 4rem;
-  }
-`;
-
-export const CreatePost = styled(Login)`
-  &:hover {
-    background-color: black;
-    span {
-      color: white;
-    }
-    transition: linear 0.15s;
-  }
-  &:not(:hover) {
-    transition: linear 0.15s;
-  }
-`;
-
-export const Profile = styled.div`
-  &:hover {
-    cursor: pointer;
-    .icon {
-      color: black;
-      transition: linear 0.15s;
-    }
-  }
-  &:not(:hover) {
-    .icon {
-      transition: linear 0.15s;
-    }
-  }
-  .icon {
-    color: gray;
-    width: 2.5rem;
-  }
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-export const ProfileImage = styled.div`
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  > .icon {
-    color: gray;
-    width: 1.3rem;
-    margin-left: 1rem;
   }
 `;

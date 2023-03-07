@@ -1,14 +1,29 @@
-import { AuthType } from "../type/auth";
-import RequestApi from "../utils/requestApi";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
+import { auth } from "../../firebaseConfig";
 class Auth {
-  signup(data: AuthType) {
-    console.log("signup");
+  signup = async () => {
     try {
-      return RequestApi({ method: "POST", url: "temp", data: data });
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      console.log(auth.currentUser);
     } catch (err) {
-      return err;
+      console.log(err);
     }
-  }
+  };
+
+  siguout = async () => {
+    try {
+      await signOut(auth);
+      console.log(auth.currentUser);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 }
 
 export default new Auth();

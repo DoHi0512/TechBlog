@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Themeprovider } from "../../../styles/theme";
 export const Info = styled.div`
   width: 75%;
   height: 100%;
@@ -6,12 +7,12 @@ export const Info = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-export const Post = styled.div`
+export const Post = styled(Themeprovider)`
   width: 100%;
   height: 23rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid ${(props) => props.text};
   &:hover {
     ${Info} {
       transform: translateX(1rem);

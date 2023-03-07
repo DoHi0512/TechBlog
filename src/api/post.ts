@@ -10,9 +10,7 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
-import { AxiosType } from "../type/axios";
 import { PostType } from "../type/post";
-import RequestApi from "../utils/requestApi";
 class Post {
   async create(data: PostType) {
     console.log("create : ", data);
@@ -48,14 +46,7 @@ class Post {
 
   modify(data: PostType) {
     try {
-      return RequestApi({
-        method: "PUT",
-        url: `http://localhost:8080/post/modify/`,
-        data: data,
-      });
-    } catch (err) {
-      return err;
-    }
+    } catch (err) {}
   }
 }
 

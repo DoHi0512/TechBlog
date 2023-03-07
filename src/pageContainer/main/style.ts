@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import { Themeprovider } from "../../styles/theme";
+import { ThemeType } from "../../type/theme";
 
-export const MainLayout = styled.div`
+export const MainLayout = styled(Themeprovider)`
   width: 100%;
+  height: calc(100% - 8rem);
   display: flex;
   justify-content: center;
   align-items: center;
