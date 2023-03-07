@@ -12,7 +12,7 @@ import { darkTheme, lightTheme, ThemeState } from "../../../pages/_app";
 export function Header() {
   const [theme, setTheme] = useRecoilState(ThemeState);
   const router = useRouter();
-  if (router.pathname === "/create" || router.pathname === "/modify/[id]")
+  if (router.pathname === "/create" || router.pathname === "/modify/[title]")
     return null;
   return (
     <S.HeaderLayout background={theme.background} text={theme.text}>

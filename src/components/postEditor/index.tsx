@@ -19,6 +19,7 @@ interface ModifyType {
 export default function PostEditor({ content, title, tag }: ModifyType) {
   const editorRef = useRef<EditorType>(null);
   const router = useRouter();
+  const currentDate = new Date().toLocaleDateString().toString();
   const task = router.asPath.substring(1, 7) === "modify" ? true : false;
   const [theme, setTheme] = useRecoilState(ThemeState);
   const [post, setPost] = useState<PostType>({
@@ -26,6 +27,7 @@ export default function PostEditor({ content, title, tag }: ModifyType) {
     title: title ? title : "",
     tag: tag ? tag : [],
     image: "",
+    date: currentDate,
   });
   const GetContent = useCallback(() => {
     if (editorRef.current) {
@@ -74,7 +76,7 @@ export default function PostEditor({ content, title, tag }: ModifyType) {
               <span
                 style={{ color: "white" }}
                 onClick={() =>
-                  task ? PostApi.modify(post) : PostApi.create(post)
+                  task ? PostApi.modify(post, title) : PostApi.create(post)
                 }
               >
                 {task ? "수정하기" : "출간하기"}

@@ -5,4 +5,5 @@ export interface PostType {
   tag?: string[];
   date?: string;
   data?: any;
+  id?: string;
 }

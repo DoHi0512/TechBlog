@@ -1,12 +1,15 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   DocumentData,
   getDocs,
   query,
   QueryDocumentSnapshot,
   QuerySnapshot,
+  setDoc,
+  updateDoc,
   where,
 } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
@@ -15,7 +18,7 @@ class Post {
   async create(data: PostType) {
     console.log("create : ", data);
     try {
-      const docRef = await addDoc(collection(db, "post"), {
+      const docRef = await setDoc(doc(db, "post", data.title), {
         ...data,
       });
       console.log(docRef);
@@ -44,9 +47,16 @@ class Post {
     }
   }
 
-  modify(data: PostType) {
+  async modify(data: PostType, title: string | undefined | string[]) {
     try {
-    } catch (err) {}
+      if (typeof title == "string") {
+        const docRef = doc(db, "post", title);
+        await deleteDoc(docRef);
+        await setDoc(doc(db, "post", data.title), { ...data });
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
 

@@ -12,8 +12,13 @@ const PostViewer = dynamic(() => import("../../components/PostViewer"), {
 const Comments = dynamic(() => import("../../components/Comments"), {
   ssr: false,
 });
-export default function DetailPage({ content, title, date, image }: PostType) {
-  const router = useRouter();
+export default function DetailPage({
+  content,
+  title,
+  date,
+  image,
+  id,
+}: PostType) {
   const [theme, setTheme] = useRecoilState(ThemeState);
   console.log(theme);
   return (
@@ -22,7 +27,7 @@ export default function DetailPage({ content, title, date, image }: PostType) {
         <S.Title>{title}</S.Title>
         <S.Info>
           <S.Date>{date}</S.Date>
-          <Link href="/detail/1">
+          <Link href={`/modify/${title}`}>
             <S.Modify>수정</S.Modify>
           </Link>
         </S.Info>
