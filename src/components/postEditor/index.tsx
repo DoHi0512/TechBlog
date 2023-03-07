@@ -14,9 +14,9 @@ interface ModifyType {
   content?: string;
   title?: string;
   tag?: string[];
-  task?: string;
+  image?: string;
 }
-export default function PostEditor({ content, title, tag }: ModifyType) {
+export default function PostEditor({ content, title, tag, image }: ModifyType) {
   const editorRef = useRef<EditorType>(null);
   const router = useRouter();
   const currentDate = new Date().toLocaleDateString().toString();
@@ -26,7 +26,7 @@ export default function PostEditor({ content, title, tag }: ModifyType) {
     content: content ? content : "",
     title: title ? title : "",
     tag: tag ? tag : [],
-    image: "",
+    image: image ? image : "",
     date: currentDate,
   });
   const GetContent = useCallback(() => {
