@@ -14,11 +14,7 @@ interface ModifyType {
   content?: string;
   title?: string;
   tag?: string[];
-<<<<<<< HEAD
   image?: string;
-=======
-  image?: "string";
->>>>>>> master
 }
 export default function PostEditor({ content, title, tag, image }: ModifyType) {
   const editorRef = useRef<EditorType>(null);
