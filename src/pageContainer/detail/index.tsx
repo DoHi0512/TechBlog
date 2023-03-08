@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { ThemeState } from "../../pages/_app";
-import { IdType } from "../../type/id";
 import { PostType } from "../../type/post";
 import * as S from "./style";
+import PostAPI from "../../api/post";
+import { useRouter } from "next/dist/client/router";
 const PostViewer = dynamic(() => import("../../components/PostViewer"), {
   ssr: false,
 });
@@ -20,16 +20,27 @@ export default function DetailPage({
   id,
 }: PostType) {
   const [theme, setTheme] = useRecoilState(ThemeState);
-  console.log(theme);
+  const router = useRouter();
   return (
     <S.Layout text={theme.text} background={theme.background}>
       <S.Content>
         <S.Title>{title}</S.Title>
         <S.Info>
-          <S.Date>{date}</S.Date>
-          <Link href={`/modify/${title}`}>
-            <S.Modify>수정</S.Modify>
-          </Link>
+          <span>{date}</span>
+          <S.Handler>
+            <Link href={`/modify/${title}`}>
+              <span>수정</span>
+            </Link>
+            <span>·</span>
+            <S.Cursor
+              onClick={() => {
+                PostAPI.delete(title);
+                router.replace("/");
+              }}
+            >
+              삭제
+            </S.Cursor>
+          </S.Handler>
         </S.Info>
         <PostViewer content={content} />
         <Comments />

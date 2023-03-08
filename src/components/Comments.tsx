@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { ThemeState } from "../pages/_app";
 export const Layout = styled.div`
-  width: 100%;
+  margin-top: 20rem;
   .utterances {
     max-width: 100% !important;
   }

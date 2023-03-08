@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
 import AuthAPI from "../../../api/auth";
 import { darkTheme, lightTheme, ThemeState } from "../../../pages/_app";
+import { useQuery } from "react-query";
 export function Header() {
   const [theme, setTheme] = useRecoilState(ThemeState);
   const router = useRouter();
@@ -27,7 +28,6 @@ export function Header() {
               theme == lightTheme ? setTheme(darkTheme) : setTheme(lightTheme)
             }
           />
-          <CiSearch className="icon" />
           <Link href="/create">
             <S.Btn background={theme.background} text={theme.text}>
               <span>새 글 작성</span>

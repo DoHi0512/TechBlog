@@ -1,40 +1,25 @@
 import styled from "styled-components";
 import { Themeprovider } from "../../styles/theme";
-import { ThemeType } from "../../type/theme";
-
 export const MainLayout = styled(Themeprovider)`
   width: 100%;
-  height: calc(100% - 8rem);
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 `;
-interface SortProps {
-  width: string;
-  columns: number;
-  gap: string;
-}
-export const PostLayout = styled.div<SortProps>`
+export const PostLayout = styled.div`
   transition: 0.35s;
-  width: ${(props) => props.width};
+  width: 90%;
   display: grid;
-  gap: ${(props) => props.gap};
+  gap: 5rem;
   //태블릿,모바일
   @media all and (max-width: 1024px) {
-    width: 90%;
-    grid-template-columns: repeat(
-      ${(props) => (props.width === "50%" ? 1 : 2)},
-      minmax(10rem, 1fr)
-    );
+    grid-template-columns: repeat(2, minmax(10rem, 1fr));
   }
 
   //데스크탑
   @media all and (min-width: 1024px) {
-    grid-template-columns: repeat(
-      ${(props) => props.columns},
-      minmax(10rem, 1fr)
-    );
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
   }
 `;
 

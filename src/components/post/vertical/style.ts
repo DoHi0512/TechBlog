@@ -34,8 +34,8 @@ export const Content = styled.div`
   justify-content: space-between;
 `;
 export const Img = styled.img`
-  width: 20%;
-  height: 100%;
+  width: 15rem;
+  object-fit : cover;
 `;
 export const Title = styled.div`
   font-size: 2.5rem;
