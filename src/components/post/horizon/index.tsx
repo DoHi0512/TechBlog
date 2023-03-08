@@ -11,9 +11,9 @@ export default function HorizonPost({
   preview,
   tag,
 }: PostType) {
-  const tags = tag?.map((data) => {
+  const tags = tag?.map((data, key) => {
     return (
-      <S.Tag>
+      <S.Tag key={key}>
         <span>{data}</span>
       </S.Tag>
     );
