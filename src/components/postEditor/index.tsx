@@ -1,6 +1,7 @@
 import * as S from "./style";
 import { Editor } from "@toast-ui/react-editor";
 import "@toast-ui/editor/dist/toastui-editor.css";
+import "@toast-ui/editor/dist/theme/toastui-editor-dark.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useRouter } from "next/dist/client/router";
 import { useCallback, useRef, useState } from "react";
@@ -10,6 +11,7 @@ import Link from "next/dist/client/link";
 import { Editor as EditorType, EditorProps } from "@toast-ui/react-editor";
 import { useRecoilState } from "recoil";
 import { ThemeState } from "../../pages/_app";
+import { BsThermometer } from "react-icons/bs";
 interface ModifyType {
   content?: string;
   title?: string;
@@ -37,7 +39,7 @@ export default function PostEditor({ content, title, tag, image }: ModifyType) {
     }
   }, [, post]);
   return (
-    <S.Layout>
+    <S.Layout text={theme.text} background={theme.background}>
       <S.InputBox>
         <S.Info>제목</S.Info>
         <S.Title
@@ -60,6 +62,8 @@ export default function PostEditor({ content, title, tag, image }: ModifyType) {
           initialEditType="markdown"
           useCommandShortcut={true}
           onChange={() => GetContent()}
+          placeholder={"# 여기에 글 입력"}
+          theme={theme.background === "#ffffff" ? "white" : "dark"}
         />
         <S.Submit>
           <S.Btn

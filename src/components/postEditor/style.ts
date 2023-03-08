@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Themeprovider } from "../../styles/theme";
 
-export const Layout = styled.div`
+export const Layout = styled(Themeprovider)`
   width: 100%;
   height: 70rem;
   display: flex;
@@ -25,10 +26,11 @@ export const Title = styled.input`
   border: 1px solid gray;
 `;
 export const Info = styled.p`
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-top: 3rem;
   margin-bottom: 1rem;
+  color: #12b886;
 `;
 
 export const Submit = styled.div`

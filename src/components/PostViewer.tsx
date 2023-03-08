@@ -4,5 +4,5 @@ interface PostingProps {
   content: string;
 }
 export default function PostViewer({ content }: PostingProps) {
-  return <Viewer initialValue={content} ></Viewer>;
+  return <Viewer initialValue={content}></Viewer>;
 }

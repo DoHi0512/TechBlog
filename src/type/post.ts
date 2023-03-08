@@ -6,4 +6,5 @@ export interface PostType {
   date?: string;
   data?: any;
   id?: string;
+  preview?: string;
 }
