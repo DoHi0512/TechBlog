@@ -10,9 +10,9 @@ class Auth {
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-      console.log(auth.currentUser);
+      return auth.currentUser;
     } catch (err) {
-      console.log(err);
+      return null;
     }
   };
 

@@ -58,6 +58,17 @@ class Post {
       console.log(err);
     }
   }
+
+  async delete(title: string | undefined | string[]) {
+    try {
+      if (typeof title == "string") {
+        const docRef = doc(db, "post", title);
+        await deleteDoc(docRef);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }
 
 export default new Post();
