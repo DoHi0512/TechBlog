@@ -58,7 +58,7 @@ export default function PostEditor({ content, title, tag, image }: ModifyType) {
           ref={editorRef}
           initialValue={content}
           previewStyle="vertical"
-          height="100%"
+          height="70rem"
           initialEditType="markdown"
           useCommandShortcut={true}
           onChange={() => GetContent()}

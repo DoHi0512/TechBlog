@@ -3,7 +3,6 @@ import { Themeprovider } from "../../styles/theme";
 
 export const Layout = styled(Themeprovider)`
   width: 100%;
-  height: 70rem;
   display: flex;
   flex-direction: column;
   align-items: center;
