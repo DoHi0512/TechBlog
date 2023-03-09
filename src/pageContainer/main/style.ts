@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { Themeprovider } from "../../styles/theme";
 export const MainLayout = styled(Themeprovider)`
   width: 100%;
+  /* height: 100%; */
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 `;
 export const PostLayout = styled.div`
   transition: 0.35s;
-  width: 90%;
+  width: 85%;
   display: grid;
   gap: 5rem;
   //태블릿,모바일
@@ -26,7 +26,7 @@ export const PostLayout = styled.div`
 export const Sort = styled.div`
   height: 8rem;
   display: flex;
-  width: 90%;
+  width: 85%;
   align-items: center;
   svg {
     width: 2.5rem;
