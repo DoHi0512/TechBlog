@@ -11,7 +11,7 @@ export const HeaderCenter = styled.div`
   > *:hover {
     cursor: pointer;
   }
-  width: 90%;
+  width: 85%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -52,8 +52,51 @@ export const Menu = styled.div`
   & > * {
     margin-left: 1.5rem;
   }
-  .icon {
+  svg {
     width: auto;
-    height: 3.5rem;
+    height: 3rem;
   }
+`;
+
+export const ChangeTheme = styled.div`
+  position: relative;
+  background-color: white;
+  color: black;
+  width: 9rem;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 2rem;
+  height: 3rem;
+`;
+export const ON = styled.div`
+  position: absolute;
+  margin-left: 6.75rem;
+  font-size : 1.2rem;
+  font-weight : bolder;
+`;
+interface TransType {
+  rotateX: string;
+}
+export const Moon = styled.div<TransType>`
+  border: 1px solid white;
+  z-index: 2;
+  background-color: black;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  svg {
+    margin-right: 0.5rem;
+    color: white;
+    width: 1.5rem;
+  }
+  transform: translateX(${(props) => props.rotateX});
+  transition: 0.5s;
 `;

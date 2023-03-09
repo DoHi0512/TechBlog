@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import * as S from "./style";
-import { AiOutlineCheckSquare, AiFillCaretDown } from "react-icons/ai";
-import { BsFillSunFill } from "react-icons/bs";
-import { CiSearch } from "react-icons/ci";
-import Modal from "react-modal";
+import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import { useRecoilState } from "recoil";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
@@ -22,18 +19,25 @@ export function Header() {
           <S.Title text={theme.text}>dohi.log</S.Title>
         </Link>
         <S.Menu>
-          <BsFillSunFill
-            className="icon"
+          <S.ChangeTheme
             onClick={() =>
-              theme == lightTheme ? setTheme(darkTheme) : setTheme(lightTheme)
+              theme.background == "#000000"
+                ? setTheme(lightTheme)
+                : setTheme(darkTheme)
             }
-          />
+          >
+            <S.Moon rotateX={theme.background == "#000000" ? "-2.5rem" : "0"}>
+              <BsFillMoonFill />
+              다크모드
+            </S.Moon>
+            <S.ON>On</S.ON>
+          </S.ChangeTheme>
           <Link href="/create">
             <S.Btn background={theme.background} text={theme.text}>
               <span>새 글 작성</span>
             </S.Btn>
           </Link>
-          <S.Btn
+          {/* <S.Btn
             background={theme.background}
             text={theme.text}
             onClick={() => AuthAPI.signup()}
@@ -46,7 +50,7 @@ export function Header() {
             onClick={() => AuthAPI.siguout()}
           >
             <span>로그아웃</span>
-          </S.Btn>
+          </S.Btn> */}
         </S.Menu>
       </S.HeaderCenter>
     </S.HeaderLayout>
