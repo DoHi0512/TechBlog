@@ -80,6 +80,7 @@ interface TransType {
   rotateX: string;
 }
 export const Moon = styled.div<TransType>`
+  /* border: 1px solid white; */
   border: 1px solid black;
   z-index: 2;
   background-color: black;
