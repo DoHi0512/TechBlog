@@ -73,14 +73,14 @@ export const ChangeTheme = styled.div`
 export const ON = styled.div`
   position: absolute;
   margin-left: 6.75rem;
-  font-size : 1.2rem;
-  font-weight : bolder;
+  font-size: 1.2rem;
+  font-weight: bolder;
 `;
 interface TransType {
   rotateX: string;
 }
 export const Moon = styled.div<TransType>`
-  border: 1px solid white;
+  border: 1px solid black;
   z-index: 2;
   background-color: black;
   border-radius: 2rem;
