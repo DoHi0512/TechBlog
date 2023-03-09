@@ -1,9 +1,9 @@
 import { useRecoilState } from "recoil";
-import { ThemeState } from "../../../pages/_app";
-import { PostType } from "../../../type/post";
+import { ThemeState } from "../../pages/_app";
+import { PostType } from "../../type/post";
 import * as S from "./style";
 
-export default function HorizonPost({
+export default function Post({
   content,
   date,
   title,

@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { Themeprovider } from "../../../styles/theme";
+import { Themeprovider } from "../../styles/theme";
 
 export const Img = styled.img`
   width: 100%;
