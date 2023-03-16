@@ -1,3 +1,3 @@
-https://blog-without-be-dohi0512.vercel.app/
+https://dohilog.vercel.app
 
 배포완료
