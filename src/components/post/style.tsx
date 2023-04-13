@@ -7,11 +7,13 @@ export const Img = styled.img`
   object-fit: cover;
 `;
 export const Post = styled(Themeprovider)`
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
   position: relative;
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  /* align-items: center; */
+  border-radius: 5px;
   &:hover {
     transform: translateY(-1rem);
     transition: 0.3s;
@@ -21,8 +23,8 @@ export const Post = styled(Themeprovider)`
     transition: 0.3s;
   }
 `;
-
 export const Title = styled.div`
+  width: 90%;
   height: 4.5rem;
   margin-top: 2rem;
   font-size: 3rem;
@@ -33,6 +35,7 @@ export const Title = styled.div`
 `;
 
 export const Preview = styled.div`
+  width: 90%;
   margin-top: 1rem;
   font-size: 2.5rem;
   color: #777777;
@@ -44,8 +47,9 @@ export const Preview = styled.div`
 `;
 
 export const Info = styled.div`
+  margin-bottom: 2rem;
   margin-top: 2rem;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
 `;

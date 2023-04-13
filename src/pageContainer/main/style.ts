@@ -8,6 +8,7 @@ export const MainLayout = styled(Themeprovider)`
   flex-direction: column;
 `;
 export const PostLayout = styled.div`
+margin-bottom : 5rem;
   transition: 0.35s;
   width: 85%;
   display: grid;
